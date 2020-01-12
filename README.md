@@ -8,5 +8,5 @@
 - Create new scheema in mysql with rewaa name
 - Navigate to src folder run the following command to create tables 
   - ../node_modules/knex/bin/cli.js migrate:latest --knexfile $PWD/knex/config/knex.js
--start the server by running the command 
+- start the server by running the command 
   - node server.js
