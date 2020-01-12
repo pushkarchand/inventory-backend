@@ -4,9 +4,9 @@
 # Steps to setup in local environment
 - Clone repository to local
 - Install npm packages by running the command 
-  # npm install
-- Create new scheema by name rewaa
+  = npm install
+- Create new scheema in mysql with rewaa name
 - Navigate to src folder run the following command to create tables 
-  # ../node_modules/knex/bin/cli.js migrate:latest --knexfile $PWD/knex/config/knex.js
+  - ../node_modules/knex/bin/cli.js migrate:latest --knexfile $PWD/knex/config/knex.js
 -start the server by running the command 
-  # node server.js
+  - node server.js
