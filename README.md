@@ -1,4 +1,4 @@
-# prerequisite
+# Prerequisite
 - Nodejs(npm)
 - mysql
 # Steps to setup in local environment
