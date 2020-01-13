@@ -2,6 +2,7 @@ const userDBA=require('../knex').User;
 const knex = require('../knex/knex');
 const uuidv1 = require('uuid/v1');
 const passwordUtil=require('../utils/password');
+const responseHandler=require('../utils/responsehandler');
 
 exports.getUserDetails=(req,res)=>{
     const userId=req.params.customerId;
@@ -12,8 +13,7 @@ exports.getUserDetails=(req,res)=>{
         })
         .catch(err=>{
             console.log(err);
-            res.writeHead(500);
-            res.send(err);
+            responseHandler.errorResponse(req,res,'Internal Server error',500);
         })
 }
 
@@ -27,7 +27,7 @@ exports.updateUser=(req,res)=>{
         })
         .catch(err=>{
             console.log(err);
-            res.send(err);
+            responseHandler.errorResponse(req,res,'Internal Server error',500);
         })
 }
 
@@ -55,7 +55,7 @@ exports.createUser=(req,res)=>{
     })
     .catch(err=>{
         console.log(err); 
-        res.send(err);
+        responseHandler.errorResponse(req,res,'Internal Server error',500);
     })
 }
 
@@ -68,7 +68,7 @@ exports.enumerateUsers=(req,res)=>{
         })
         .catch(err=>{
             console.log(err);
-            res.send(err);
+            responseHandler.errorResponse(req,res,'Internal Server error',500);
         })
 }
 
@@ -83,6 +83,6 @@ exports.removeUser=(req,res)=>{
     })
     .catch(err=>{
         console.log(err);
-        res.send(err);
+        responseHandler.errorResponse(req,res,'Internal Server error',500);
     })
 }

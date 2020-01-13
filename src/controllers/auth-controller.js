@@ -1,6 +1,7 @@
 const userDBA=require('../knex').User;
 const passwordUtil=require('../utils/password');
 const jwtTokenUtils=require('../utils/jwttoken');
+const responseHandler=require('../utils/responsehandler');
 
 exports.loginUser=(req,res)=>{
     const emailId=req.body.emailId;
@@ -21,6 +22,7 @@ exports.loginUser=(req,res)=>{
         }
     })
     .catch(err=>{
-        res.send({message:"Invalid EmailId or password"});
+        console.log(err);
+        responseHandler.errorResponse(req,res,'Invalid EmailId or password',500);
     })
 }
