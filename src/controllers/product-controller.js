@@ -58,12 +58,12 @@ exports.enumerateProducts=(req,res)=>{
 }
 
 exports.removeProduct=(req,res)=>{
-    const userIds=req.query.id.split(',');
+    const userIds=req.params.id.split(',');
     return knex('product')
      .whereIn('id', userIds)
      .del()
      .then(deleteResponse=>{
-         res.send(deleteResponse);
+         res.send({message:"Deleted sucessfully"});
      })
      .catch(err=>{
          console.log(err)
